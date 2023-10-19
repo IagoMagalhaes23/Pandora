@@ -39,11 +39,11 @@ def cropImage(image, positions, caminho, name):
         :param caminho: recebe o endereço onde a imagem deve ser salva
         :param name: nome da imagem a ser salva
     '''
-    string = ''.join(positions[0].splitlines())
-    x = int(string[0:3])
-    y = int(string[6:9])
-    w = int(string[3:6])
-    h = int(string[9:12])
+    string = positions[0].split("\n")
+    x = int(string[1])
+    y = int(string[3])
+    w = int(string[2])
+    h = int(string[4])
 
     # print(string)
     # print(x, y, w, h)
@@ -53,4 +53,4 @@ def cropImage(image, positions, caminho, name):
     try:
         cv2.imwrite(os.path.join(caminho, '%d.png') %name, roi)
     except:
-        print('Erro ao salvar imagem: {}_{}.png'.format(name, classe))
+        print('Erro ao salvar imagem: {}.png'.format(name))
