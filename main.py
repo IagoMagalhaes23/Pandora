@@ -11,11 +11,18 @@ import random
 import pandas as pd
 import numpy as np
 
+from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau
+
+from models import AlexNet, Detectron2, EfficientNet, GNN, InceptionV3, LeNet, VanessinhaNet, ViT, YoloV5, YoloV8
 from utils import functions as fct
 
 caminho_train = 'dataset/recortado/train'
 caminho_test = 'dataset/recortado/test'
 caminho_valid = 'dataset/recortado/valid'
+
+callback = EarlyStopping(monitor='loss', patience=5, mode='min')
 
 data_train = fct.readFiles(caminho_train)
 data_test= fct.readFiles(caminho_test)
@@ -45,5 +52,23 @@ print('Treino shape: {}, Labels shape: {}'.format(X_train.shape, y_train.shape))
 print('Valid shape: {}, Labels shape: {}'.format(X_valid.shape, y_valid.shape))
 print('Teste shape: {}, Labels shape: {}'.format(X_test.shape, y_test.shape))
 
-X_train, X_test, y_train, y_test, y_valid = fct.expandDataset(X_train, X_test, y_train, y_test, y_valid)
+datagen = ImageDataGenerator(
+    rotation_range=10,
+    zoom_range = 0.1,
+    width_shift_range=0.1,
+    height_shift_range=0.1,
+    horizontal_flip=False,
+    vertical_flip=False
+)
 
+datagen.fit(X_train)
+datagen.fit(X_test)
+
+y_train = to_categorical(y_train)
+y_test = to_categorical(y_test)
+y_valid = to_categorical(y_valid)
+
+modelAlex = AlexNet.alexNet()
+history = modelAlex.fit(X_train, y_train, batch_size=1, epochs = 10, verbose = 1, callbacks=[callback])
+modelAlex.summary()
+# modelAlex.save(filepath='modelalexnet.hdf5')
