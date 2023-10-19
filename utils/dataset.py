@@ -31,14 +31,13 @@ def readXML(file):
     
     return results
 
-def cropImage(image, positions, caminho, name, classe):
+def cropImage(image, positions, caminho, name):
     '''
         Função para recortar a mucosa da imagem original
         :param image: recebe a imagem original do dataset
         :param positions: recebe uma lista com as posições x, y, w e h
         :param caminho: recebe o endereço onde a imagem deve ser salva
         :param name: nome da imagem a ser salva
-        :param classe: classe da imagem resultante
     '''
     string = ''.join(positions[0].splitlines())
     x = int(string[0:3])
