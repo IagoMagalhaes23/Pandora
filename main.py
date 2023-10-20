@@ -2,7 +2,9 @@
     Autores: Iago Magalhães e Vanessa Carvalho
     Data: 18/10/2023
     Descrição:
-        - 
+        - Arquivo principal
+        - Ler imagens e as divide em treino, teste e validação
+        - Executa o treinamento de todos os modelos de CNN, GNN e ViT
 '''
 
 import os
@@ -12,8 +14,8 @@ import pandas as pd
 import numpy as np
 
 from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau
 
 from models import AlexNet, Detectron2, EfficientNet, GNN, InceptionV3, LeNet, VanessinhaNet, ViT, YoloV5, YoloV8
 from utils import functions as fct
