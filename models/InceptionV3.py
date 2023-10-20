@@ -1,8 +1,44 @@
 '''
     Autores: Iago Magalhães e Vanessa Carvalho
-    Data: 18/10/2023
+    Data: 19/10/2023
     Descrição:
-        - Arquivo principal
-        - Ler imagens e as divide em treino, teste e validação
-        - Executa o treinamento de todos os modelos de CNN, GNN e ViT
+        - 
 '''
+
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Conv2D, MaxPooling2D, MaxPool2D, Flatten, Dropout, BatchNormalization
+from tensorflow.keras.optimizers.legacy import Adam
+
+def inceptionV3():
+    '''
+    
+    '''
+    model = Sequential()
+
+    model.add(Conv2D(32, (3, 3), input_shape=(150, 150, 3), activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2, 2)))
+
+    model.add(Conv2D(32, (3, 3), activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2, 2)))
+
+    model.add(Dropout(0.25))
+
+    model.add(Conv2D(32, (3, 3), activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2, 2)))
+
+    model.add(Conv2D(32, (3, 3), activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2, 2)))
+
+    model.add(Dropout(0.25))
+
+    model.add(Flatten())
+    model.add(Dense(units=256, activation='relu'))
+
+    model.add(Dropout(0.5))
+
+    model.add(Dense(units=2, activation='softmax'))
+
+    optimizer = Adam(lr=0.0001, decay=1e-5)
+    model.compile(loss='mse', optimizer=optimizer, metrics=['accuracy'])
+
+    return model
