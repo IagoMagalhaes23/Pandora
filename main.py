@@ -42,17 +42,21 @@ df_train = df_train.reset_index(drop = True)
 df_test = df_test.reset_index(drop = True)
 df_valid = df_valid.reset_index(drop = True)
 
+print('----------------------------- SHAPES DF -----------------------------')
 print(df_train.shape)
 print(df_valid.shape)
 print(df_test.shape)
+print('---------------------------------------------------------------------')
 
 X_train, y_train = fct.compose_dataset(df_train)
 X_test, y_test = fct.compose_dataset(df_test)
 X_valid, y_valid = fct.compose_dataset(df_valid)
 
+print('----------------------------- SHAPES LABEL -----------------------------')
 print('Treino shape: {}, Labels shape: {}'.format(X_train.shape, y_train.shape))
 print('Valid shape: {}, Labels shape: {}'.format(X_valid.shape, y_valid.shape))
 print('Teste shape: {}, Labels shape: {}'.format(X_test.shape, y_test.shape))
+print('------------------------------------------------------------------------')
 
 datagen = ImageDataGenerator(
     rotation_range=10,

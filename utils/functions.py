@@ -2,13 +2,16 @@
     Autores: Iago Magalhães e Vanessa Carvalho
     Data: 18/10/2023
     Descrição:
-        - Implementa funções para leitura das imagens, aplicação de filtro de realce e composição do dataset para treino, teste e validação
+        - Implementa funções para leitura das imagens
+        - Aplicação de filtro de realce e composição do dataset para treino, teste e validação
+        - Plotagem dos gráficos de treinamento
 '''
 
 import os
 import cv2
-import pandas as pd
 import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
 
 def readFiles(caminhos):
     '''
@@ -54,3 +57,16 @@ def compose_dataset(df):
         labels.append(label)
 
     return np.array(data), np.array(labels)
+
+def plot_hist(hist):
+    '''
+        Função para plotar o gráfico de treinamento
+        :param hist: recebe o histórico de treinamento da rede
+    '''
+    plt.plot(hist.history["accuracy"])
+    plt.plot(hist.history["val_accuracy"])
+    plt.title("model accuracy")
+    plt.ylabel("accuracy")
+    plt.xlabel("epoch")
+    plt.legend(["train", "validation"], loc="upper left")
+    plt.show()
