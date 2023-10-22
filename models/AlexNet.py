@@ -5,7 +5,6 @@
         - Arquiterura rede AlexNet
 '''
 
-
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Conv2D, MaxPooling2D, MaxPool2D, Flatten, Dropout, BatchNormalization
 from tensorflow.keras.optimizers.legacy import Adam
