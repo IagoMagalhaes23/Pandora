@@ -1,8 +1,8 @@
 '''
     Autores: Iago Magalhães e Vanessa Carvalho
-    Data: 19/10/2023
+    Data: 22/10/2023
     Descrição:
-        - 
+        - Arquiterura rede InceptionV3
 '''
 
 from tensorflow.keras.models import Sequential
@@ -11,7 +11,8 @@ from tensorflow.keras.optimizers.legacy import Adam
 
 def inceptionV3():
     '''
-    
+        Função com arquitetura da rede CNN InceptionV3
+        :return: modelo da rede CNN InceptionV3
     '''
     model = Sequential()
 
