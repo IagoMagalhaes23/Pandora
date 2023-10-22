@@ -1,6 +1,10 @@
 '''
-
+    Autores: Iago Magalhães e Vanessa Carvalho
+    Data: 22/10/2023
+    Descrição:
+        - Arquiterura rede AlexNet
 '''
+
 
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Conv2D, MaxPooling2D, MaxPool2D, Flatten, Dropout, BatchNormalization
@@ -8,7 +12,8 @@ from tensorflow.keras.optimizers.legacy import Adam
 
 def alexNet():
     '''
-    
+        Função com arquitetura da rede CNN AlexNet
+        :return: modelo da rede CNN AlexNet
     '''
     model = Sequential()
 
