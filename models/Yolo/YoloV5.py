@@ -11,4 +11,4 @@ def yoloV5():
     '''
         Função
     '''
-    os.system('py train.py --img 640 --batch 16 --epochs 5 --data data.yaml')
+    os.system('python models/Yolo/yoloV5/train.py --img 640 --batch 16 --epochs 5 --data data.yaml')
