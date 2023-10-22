@@ -1,8 +1,8 @@
 '''
     Autores: Iago Magalhães e Vanessa Carvalho
-    Data: 19/10/2023
+    Data: 22/10/2023
     Descrição:
-        - 
+        - Arquiterura rede LeNet
 '''
 
 from tensorflow.keras.models import Sequential
@@ -11,7 +11,8 @@ from tensorflow.keras.optimizers.legacy import Adam
 
 def leNet():
     '''
-    
+        Função com arquitetura da rede CNN LeNet
+        :return: modelo da rede CNN LeNet
     '''
     model = Sequential()
 
