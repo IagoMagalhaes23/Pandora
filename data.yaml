@@ -1,0 +1,6 @@
+train: dataset/recortado/train
+val: dataset/recortado/valid
+test: dataset/recortado/test
+
+nc: 1
+names: ['Resposta']

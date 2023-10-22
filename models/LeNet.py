@@ -15,7 +15,7 @@ def leNet():
     '''
     model = Sequential()
 
-    model.add(Conv2D(filters=6, kernel_size=(3, 3), padding='same', activation='relu', input_shape=(32,32,1)))
+    model.add(Conv2D(filters=6, kernel_size=(3, 3), padding='same', activation='relu', input_shape=(224,224,1)))
     model.add(MaxPooling2D())
 
     model.add(Conv2D(filters=16, kernel_size=(3, 3), activation='relu'))
