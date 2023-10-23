@@ -17,7 +17,7 @@ def readFiles(caminhos):
     '''
         Função para ler todos os arquivos de imagem em uma pasta
         :param caminhos: caminho dos arquivos de imagem
-        : return: retorna uma lista com o endereço e nome da imagem
+        : return: retorna uma lista com o endereço e nome da imagem e a respectiva classe
     '''
     cont = 0
     data_list = []
@@ -25,7 +25,8 @@ def readFiles(caminhos):
     for caminho, _, arquivo in os.walk(caminhos):
         cam = str(caminho.replace("\\", "/"))+"/"
         for file in arquivo:
-            data_list.append([os.path.join(cam, file), 0])
+            # print(file[-5])
+            data_list.append([os.path.join(cam, file), file[-5]])
 
     return data_list
 
