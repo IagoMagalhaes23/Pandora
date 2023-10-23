@@ -59,25 +59,25 @@ print('Valid shape: {}, Labels shape: {}'.format(X_valid.shape, y_valid.shape))
 print('Teste shape: {}, Labels shape: {}'.format(X_test.shape, y_test.shape))
 print('------------------------------------------------------------------------')
 
-# datagen = ImageDataGenerator(
-#     rotation_range=10,
-#     zoom_range = 0.1,
-#     width_shift_range=0.1,
-#     height_shift_range=0.1,
-#     horizontal_flip=False,
-#     vertical_flip=False
-# )
+datagen = ImageDataGenerator(
+    rotation_range=10,
+    zoom_range = 0.1,
+    width_shift_range=0.1,
+    height_shift_range=0.1,
+    horizontal_flip=False,
+    vertical_flip=False
+)
 
-# datagen.fit(X_train)
-# datagen.fit(X_test)
+datagen.fit(X_train)
+datagen.fit(X_test)
 
-# y_train = to_categorical(y_train)
-# y_test = to_categorical(y_test)
-# y_valid = to_categorical(y_valid)
+y_train = to_categorical(y_train)
+y_test = to_categorical(y_test)
+y_valid = to_categorical(y_valid)
 
-# modelAlex = LeNet.leNet()
-# history = modelAlex.fit(X_train, y_train, batch_size=1, epochs = 10, verbose = 1, callbacks=[callback])
-# modelAlex.summary()
-# modelAlex.save(filepath='modelalexnet.hdf5')
+modelAlex = LeNet.leNet()
+history = modelAlex.fit(X_train, y_train, batch_size=1, epochs = 10, verbose = 1, callbacks=[callback])
+modelAlex.summary()
+modelAlex.save(filepath='modelalexnet.hdf5')
 
 # YoloV5.yoloV5()

@@ -37,7 +37,7 @@ def inceptionV3():
 
     model.add(Dropout(0.5))
 
-    model.add(Dense(units=2, activation='softmax'))
+    model.add(Dense(units=5, activation='softmax'))
 
     optimizer = Adam(lr=0.0001, decay=1e-5)
     model.compile(loss='mse', optimizer=optimizer, metrics=['accuracy'])
