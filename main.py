@@ -78,6 +78,6 @@ y_valid = to_categorical(y_valid)
 modelAlex = LeNet.leNet()
 history = modelAlex.fit(X_train, y_train, batch_size=1, epochs = 10, verbose = 1, callbacks=[callback])
 modelAlex.summary()
-modelAlex.save(filepath='modelalexnet.hdf5')
+# modelAlex.save(filepath='modelalexnet.hdf5')
 
 # YoloV5.yoloV5()

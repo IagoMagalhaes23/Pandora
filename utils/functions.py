@@ -55,7 +55,16 @@ def compose_dataset(df):
 
     for img_path, label in df.values:
         data.append(filtro(img_path))
-        labels.append(label)
+        if label == 'A':
+            labels.append(0)
+        elif label == 'B':
+            labels.append(1)
+        elif label == 'C':
+            labels.append(2)
+        elif label == 'D':
+            labels.append(3)
+        elif label == 'E':
+            labels.append(4)
 
     return np.array(data), np.array(labels)
 
