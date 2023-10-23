@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 5
+names: ['A', 'B', 'C', 'D', 'E']
+
+roboflow:
+  workspace: project
+  project: soc_mcq
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/project/soc_mcq/dataset/1

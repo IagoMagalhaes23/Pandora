@@ -80,4 +80,4 @@ from utils import functions as fct
 # modelAlex.summary()
 # modelAlex.save(filepath='modelalexnet.hdf5')
 
-YoloV5.yoloV5()
+# YoloV5.yoloV5()

@@ -9,6 +9,6 @@ import os
 
 def yoloV5():
     '''
-        Função
+        Função para executar o treinamento do Yolo V5
     '''
-    os.system('python models/Yolo/yoloV5/train.py --img 640 --batch 16 --epochs 5 --data data.yaml')
+    os.system('python models/Yolo/yoloV5/train.py --img 640 --batch 16 --epochs 5 --data models/Yolo/soc_mcq.v1i.yolov5pytorch/data.yaml')
