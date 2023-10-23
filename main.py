@@ -76,9 +76,21 @@ y_test = to_categorical(y_test)
 y_valid = to_categorical(y_valid)
 
 # modelAlex = LeNet.leNet()
-modelAlex = AlexNet.alexNet()
-history = modelAlex.fit(X_train, y_train, batch_size=1, epochs = 10, verbose = 1, callbacks=[callback])
-modelAlex.summary()
+# modelAlex = AlexNet.alexNet()
+# modelAlex = InceptionV3.inceptionV3()
+# history = modelAlex.fit(X_train, y_train, batch_size=1, epochs = 10, verbose = 1, callbacks=[callback])
+# modelAlex.summary()
 # modelAlex.save(filepath='modelalexnet.hdf5')
+
+from sklearn.preprocessing import LabelEncoder , OneHotEncoder
+from sklearn.compose import ColumnTransformer
+
+ct = ColumnTransformer([('my_ohe', OneHotEncoder(), [0])], remainder='passthrough')
+y_train = ct.fit_transform(y_train) #.toarray()
+
+modelo = EfficientNet.efficientnetB0()
+# epochs = 10  # @param {type: "slider", min:10, max:100}
+hist = modelo.fit(X_train, y_train, epochs=30, verbose=2)
+# hist = modelo.fit(X_train, epochs=epochs, validation_data=X_test, verbose=2)
 
 # YoloV5.yoloV5()
