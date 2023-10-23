@@ -1,6 +1,6 @@
-train: ../train/images
-val: ../valid/images
-test: ../test/images
+train: ../soc_mcq.v1i.yolov5pytorch/train/images
+val: ../soc_mcq.v1i.yolov5pytorch/valid/images
+test: ../soc_mcq.v1i.yolov5pytorch/test/images
 
 nc: 5
 names: ['A', 'B', 'C', 'D', 'E']
