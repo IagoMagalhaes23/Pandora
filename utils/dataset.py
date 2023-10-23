@@ -53,13 +53,14 @@ def getClass(file):
 
     return string[1]
 
-def cropImage(image, positions, caminho, name):
+def cropImage(image, positions, caminho, name, classe):
     '''
         Função para recortar a mucosa da imagem original
         :param image: recebe a imagem original do dataset
         :param positions: recebe uma lista com as posições x, y, w e h
         :param caminho: recebe o endereço onde a imagem deve ser salva
         :param name: nome da imagem a ser salva
+        :param classe: valor da classe da imagem a ser salva
     '''
     string = positions[0].split("\n")
     x = int(string[1])
@@ -73,6 +74,6 @@ def cropImage(image, positions, caminho, name):
     roi = image[y:h, x:w]
 
     try:
-        cv2.imwrite(os.path.join(caminho, '%d.png') %name, roi)
+        cv2.imwrite(os.path.join(caminho, '{}_{}.png'.format(name, classe)), roi)
     except:
         print('Erro ao salvar imagem: {}.png'.format(name))
