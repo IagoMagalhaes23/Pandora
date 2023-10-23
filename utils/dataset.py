@@ -76,4 +76,4 @@ def cropImage(image, positions, caminho, name, classe):
     try:
         cv2.imwrite(os.path.join(caminho, '{}_{}.png'.format(name, classe)), roi)
     except:
-        print('Erro ao salvar imagem: {}.png'.format(name))
+        print('Erro ao salvar imagem: {}_{}.png'.format(name, classe))
