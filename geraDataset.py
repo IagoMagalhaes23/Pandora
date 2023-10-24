@@ -12,8 +12,6 @@ from utils import dataset
 
 caminhos = 'dataset/original'
 
-# d = dataset.getClass('dataset/original/valid/79_jpg.rf.62f110f5d3180c065c101c360dadf378.xml')
-
 for caminho, _, arquivo in os.walk(caminhos):
     caminho = str(caminho.replace("\\", "/"))
     positions = []

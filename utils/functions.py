@@ -14,6 +14,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+from keras.preprocessing import image
 from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, roc_curve, auc
 
 def readFiles(caminhos):
@@ -77,24 +78,23 @@ def plot_hist(hist):
         :param hist: recebe o histórico de treinamento da rede
     '''
     plt.plot(hist.history["accuracy"])
-    plt.plot(hist.history["val_accuracy"])
+    plt.plot(hist.history["loss"])
     plt.title("model accuracy")
     plt.ylabel("accuracy")
     plt.xlabel("epoch")
     plt.legend(["train", "validation"], loc="upper left")
     plt.show()
 
-def metrics(y_actual, y_pred, thresh):
+def metrics(y_actual, y_pred):
     '''
         Função para plotagem das métricas de avaliação do modelo
         :param y_actual: valor original da classe
         :param y_pred: valor predito pelo modelo
-        :param thresh: limiar para ativação do valor
         :return: retorna o valor de acurácia, precisão, sensibilidade, fpr, tpr, roc_auc
     '''
-    accuracy = accuracy_score(y_actual, (y_pred > thresh))
-    precisao = precision_score(y_actual, y_pred)
-    sensibilidade = recall_score(y_actual, y_pred)
+    accuracy = accuracy_score(y_actual, y_pred)
+    precisao = precision_score(y_actual, y_pred, average='macro')
+    sensibilidade = recall_score(y_actual, y_pred, average='macro')
     fpr, tpr, _ = roc_curve(y_actual, y_pred)
     roc_auc = auc(fpr, tpr)
     print('------------------------------------')
@@ -106,7 +106,7 @@ def metrics(y_actual, y_pred, thresh):
 
 def plot_confusion_matrix(cm, target_names, title='Confusion matrix', cmap=None, normalize=True):
     '''
-    
+        Função para plotagem da matriz de confusão
     '''
     accuracy = np.trace(cm) / float(np.sum(cm))
     misclass = 1 - accuracy
@@ -147,15 +147,6 @@ def plot_confusion_matrix(cm, target_names, title='Confusion matrix', cmap=None,
     plt.xlabel('Predição', fontsize=20)
     plt.show()
 
-# c=confusion_matrix(y_treino, (y_train_preds > 0.5))
-# plot_confusion_matrix(
-#     cm = c,
-#     normalize = False,
-#     target_names = ['Sol', 'Chuva'],
-#     title = "Matriz de confusão Naive Bayes"
-# )
-# plt.show()
-
 def roc_curve():
     '''
         Função para plotagem da curva roc
@@ -173,3 +164,20 @@ def roc_curve():
     # plt.legend(loc="lower right")
     # plt.show()
     print('Tu ainda precisa fazer essa função')
+
+def prepararImagem(imagem):
+    test_image = image.img_to_array(imagem.T)
+    test_image = np.expand_dims(test_image, axis = 0)    
+    return test_image
+
+def mostraCateg(resultado):
+    categs = ['A', 'B', 'C', 'D', 'E']
+    max_value = None
+    max_idx = None
+        
+    for idx, num in enumerate(resultado[0]):
+        if max_value is None or num > max_value:
+            max_value = num
+            max_idx = idx
+    
+    return categs[max_idx]
