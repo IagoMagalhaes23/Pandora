@@ -10,8 +10,10 @@
 import os
 import cv2
 import itertools
+import tracemalloc
 import numpy as np
 import pandas as pd
+from time import time_ns
 import matplotlib.pyplot as plt
 
 from keras.preprocessing import image
@@ -181,3 +183,26 @@ def mostraCateg(resultado):
             max_idx = idx
     
     return categs[max_idx]
+
+def process_memory():
+  process = psutil.Process(os.getpid())
+  mem_info = process.memory_info()
+  return mem_info.rss
+
+def getMemory(funcao, W, arr):
+  start_time = time_ns()  #Pega o tempo inicial
+  # mem_before = process_memory() #Pega a memória inicial
+  tracemalloc.start()
+  #XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+  results = funcao(W, arr)
+  mem_used = tracemalloc.get_traced_memory()
+  #XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  # mem_after = process_memory() #Pega a memória final
+  tracemalloc.stop()
+
+  # mem_used = mem_after - mem_before  #Calcula a memória consumida em bytes
+  end_time = time_ns()  # Pega o tempo de término
+  elapsed_time = end_time - start_time  #Calcula o tempo consumido em nanossegundos
+
+  return mem_used, elapsed_time, results
