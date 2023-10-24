@@ -47,7 +47,9 @@ def filtro(cam):
     img = cv2.resize(img, (224, 224))
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     img = img/255.0
-    img = cv2.GaussianBlur(img, ( 3, 3), 0)
+    # img = cv2.GaussianBlur(img, ( 3, 3), 0)
+    img = cv2.bilateralFilter(img,	9,	75,	75)
+
     img = np.reshape(img, (224,224,1))
     return img
 
