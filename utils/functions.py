@@ -185,7 +185,8 @@ def mostraCateg(resultado):
         if max_value is None or num > max_value:
             max_value = num
             max_idx = idx
-    
+    print(max_value)
+    print(max_idx)
     return categs[max_idx]
 
 def process_memory():
