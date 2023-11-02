@@ -17,8 +17,8 @@ from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-from models import AlexNet, Detectron2, EfficientNet, GNN, InceptionV3, LeNet, VanessinhaNet, ViT
-from models.Yolo import  YoloV5, YoloV8
+from models import AlexNet, EfficientNet, InceptionV3, LeNet, VanessinhaNet, ViT
+# from models.Yolo import  YoloV5, YoloV8
 from utils import functions as fct
 
 caminho_train = 'dataset/recortado/train'
@@ -76,10 +76,10 @@ y_test = to_categorical(y_test)
 y_valid = to_categorical(y_valid)
 
 # modelAlex = LeNet.leNet()
-# modelAlex = AlexNet.alexNet()
+modelAlex = AlexNet.alexNet()
 # modelAlex = InceptionV3.inceptionV3()
-# history = modelAlex.fit(X_train, y_train, batch_size=1, epochs = 10, verbose = 1, callbacks=[callback])
-# modelAlex.summary()
+history = modelAlex.fit(X_train, y_train, batch_size=1, epochs = 10, verbose = 1, callbacks=[callback])
+modelAlex.summary()
 # modelAlex.save(filepath='modelalexnet.hdf5')
 
 

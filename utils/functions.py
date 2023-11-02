@@ -47,7 +47,12 @@ def filtro(cam):
     img = cv2.resize(img, (224, 224))
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     img = img/255.0
-    img = cv2.GaussianBlur(img, ( 5, 5), 0)
+    elementoEstruturante	=	cv2.getStructuringElement(
+		cv2.MORPH_ELLIPSE,	(5,5)
+    )
+    img = cv2.dilate(	img,	elementoEstruturante,	iterations	=	2)
+    # img =	cv2.Laplacian(img,	cv2.CV_8U)
+    # img = cv2.GaussianBlur(img, ( 5, 5), 0)
     # img = cv2.blur(img, ( 3, 3), 0)
     # img = cv2.medianBlur(img, ( 3, 3), 0)
 
