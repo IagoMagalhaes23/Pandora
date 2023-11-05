@@ -25,6 +25,9 @@ caminho_train = 'dataset/recortado/train'
 caminho_test = 'dataset/recortado/test'
 caminho_valid = 'dataset/recortado/valid'
 
+size = 35
+filtro = 5
+
 callback = EarlyStopping(monitor='loss', patience=5, mode='min')
 
 data_train = fct.readFiles(caminho_train)
@@ -49,9 +52,9 @@ print(df_valid.shape)
 print(df_test.shape)
 print('---------------------------------------------------------------------')
 
-X_train, y_train = fct.compose_dataset(df_train)
-X_test, y_test = fct.compose_dataset(df_test)
-X_valid, y_valid = fct.compose_dataset(df_valid)
+X_train, y_train = fct.compose_dataset(df_train, size, filtro)
+X_test, y_test = fct.compose_dataset(df_test, size, filtro)
+X_valid, y_valid = fct.compose_dataset(df_valid, size, filtro)
 
 print('----------------------------- SHAPES LABEL -----------------------------')
 print('Treino shape: {}, Labels shape: {}'.format(X_train.shape, y_train.shape))

@@ -37,7 +37,7 @@ def readFiles(caminhos):
 
     return data_list
 
-def filtro(cam, size, filtro):
+def filtros(cam, size, filtro):
     '''
         Função para redimensionamento da imagens em 224x224 pixels, conversão para tons de cinza e aplicação do filtro Gaussiano
         :param cam: enderenço, nome e formato da imagem a ser tratada
@@ -79,7 +79,7 @@ def compose_dataset(df, size, filtro):
     labels = []
 
     for img_path, label in df.values:
-        data.append(filtro(img_path, size, filtro))
+        data.append(filtros(img_path, size, filtro))
         if label == 'A':
             labels.append(0)
         elif label == 'B':
