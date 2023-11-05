@@ -37,11 +37,13 @@ def readFiles(caminhos):
 
     return data_list
 
-def filtro(cam):
+def filtro(cam, size, filtro):
     '''
         Função para redimensionamento da imagens em 224x224 pixels, conversão para tons de cinza e aplicação do filtro Gaussiano
         :param cam: enderenço, nome e formato da imagem a ser tratada
-        :return: retorna uma imagem redimensionada em tons de cinza
+        :param size: tamanho da imagem final
+        :param filtro: defini qual filtro será aplicado na imagem
+        :return: retorna uma imagem redimensionada e com aplicação de um filtro
     '''
     img = cv2.imread(cam)
     img = cv2.resize(img, (224, 224))
