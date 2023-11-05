@@ -67,17 +67,19 @@ def filtro(cam, size, filtro):
     img = np.reshape(img, (size, size, 1))
     return img
 
-def compose_dataset(df):
+def compose_dataset(df, size, filtro):
     '''
         Função para compor o dataset de treino, teste e validação
         :param df: recebe um dataframe com o endereço da imagem e seu label
+        :param size: tamanho da imagem final
+        :param filtro: defini qual filtro será aplicado na imagem
         :return: retorna dois np.arrays com a imagem e o label
     '''
     data = []
     labels = []
 
     for img_path, label in df.values:
-        data.append(filtro(img_path))
+        data.append(filtro(img_path, size, filtro))
         if label == 'A':
             labels.append(0)
         elif label == 'B':
