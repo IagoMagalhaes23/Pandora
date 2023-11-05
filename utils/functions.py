@@ -46,19 +46,25 @@ def filtro(cam, size, filtro):
         :return: retorna uma imagem redimensionada e com aplicação de um filtro
     '''
     img = cv2.imread(cam)
-    img = cv2.resize(img, (224, 224))
+    img = cv2.resize(img, (size, size))
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     img = img/255.0
-    elementoEstruturante	=	cv2.getStructuringElement(
-		cv2.MORPH_ELLIPSE,	(5,5)
-    )
-    img = cv2.dilate(	img,	elementoEstruturante,	iterations	=	2)
-    # img =	cv2.Laplacian(img,	cv2.CV_8U)
-    # img = cv2.GaussianBlur(img, ( 5, 5), 0)
-    # img = cv2.blur(img, ( 3, 3), 0)
-    # img = cv2.medianBlur(img, ( 3, 3), 0)
 
-    img = np.reshape(img, (224,224,1))
+    if(filtro == 0):
+        elementoEstruturante = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5,5))
+        img = cv2.dilate( img, elementoEstruturante, iterations = 2)
+    elif(filtro == 1):
+        img = cv2.Laplacian(img, cv2.CV_8U)
+    elif(filtro == 2):
+        img = cv2.GaussianBlur(img, ( 5, 5), 0)
+    elif(filtro == 3):
+        img = cv2.blur(img, ( 3, 3), 0)
+    elif(filtro == 4):
+        img = cv2.medianBlur(img, ( 3, 3), 0)
+    elif(filtro == 5):
+        _, img = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
+
+    img = np.reshape(img, (size, size, 1))
     return img
 
 def compose_dataset(df):
