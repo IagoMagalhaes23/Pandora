@@ -78,11 +78,44 @@ y_train = to_categorical(y_train)
 y_test = to_categorical(y_test)
 y_valid = to_categorical(y_valid)
 
-# modelAlex = LeNet.leNet()
-modelAlex = AlexNet.alexNet()
-# modelAlex = InceptionV3.inceptionV3()
-history = modelAlex.fit(X_train, y_train, batch_size=1, epochs = 10, verbose = 1, callbacks=[callback])
-modelAlex.summary()
+
+# img = fct.filtros('dataset/recortado/train/0_A.png', 224, 0)
+# cv2.imshow('hjh1', img)
+
+# img = fct.filtros('dataset/recortado/train/0_A.png', 224, 1)
+# cv2.imshow('hjh2', img)
+
+# img = fct.filtros('dataset/recortado/train/0_A.png', 224, 2)
+# cv2.imshow('hjh3', img)
+
+# img = fct.filtros('dataset/recortado/train/0_A.png', 224, 3)
+# cv2.imshow('hjh4', img)
+
+# img = fct.filtros('dataset/recortado/train/0_A.png', 224, 4)
+# cv2.imshow('hjh5', img)
+
+# img = fct.filtros('dataset/recortado/train/0_A.png', 224, 5)
+# cv2.imshow('hjh5', img)
+
+# img = fct.filtros('dataset/recortado/train/0_A.png', 224, 6)
+# cv2.imshow('hjh6', img)
+
+# img = fct.filtros('dataset/recortado/train/0_A.png', 224, 7)
+# cv2.imshow('hjh7', img)
+
+# img = fct.filtros('dataset/recortado/train/0_A.png', 224, 8)
+# cv2.imshow('hjh8', img)
+
+# img = fct.filtros('dataset/recortado/train/0_A.png', 224, 9)
+# cv2.imshow('hjh9', img)
+
+# cv2.waitKey(0)
+
+# # modelAlex = LeNet.leNet()
+# modelAlex = AlexNet.alexNet()
+# # modelAlex = InceptionV3.inceptionV3()
+# history = modelAlex.fit(X_train, y_train, batch_size=1, epochs = 10, verbose = 1, callbacks=[callback])
+# modelAlex.summary()
 # modelAlex.save(filepath='modelalexnet.hdf5')
 
 

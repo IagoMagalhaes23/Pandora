@@ -48,27 +48,39 @@ def filtros(cam, size, filtro):
     img = cv2.imread(cam)
     img = cv2.resize(img, (size, size))
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    img = img/255.0
+    # img = img/255.0
 
     if(filtro == 0):
         elementoEstruturante = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5,5))
         img = cv2.dilate( img, elementoEstruturante, iterations = 2)
     elif(filtro == 1):
-        img = cv2.Laplacian(img, cv2.CV_8U)
+        img = cv2.Laplacian(img, cv2.CV_64F)
+        img = np.uint8(np.absolute(img))
     elif(filtro == 2):
         img = cv2.GaussianBlur(img, ( 5, 5), 0)
     elif(filtro == 3):
         img = cv2.blur(img, ( 3, 3), 0)
     elif(filtro == 4):
-        img = cv2.medianBlur(img, ( 3, 3), 0)
+        img = cv2.medianBlur(img, 3, 0)
     elif(filtro == 5):
+        img = cv2.medianBlur(img, 5, 0)
         _, img = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
     elif(filtro == 6):
-        img = cv2.GaussianBlur(img, ( 5, 5), 0)
+        img = cv2.GaussianBlur(img, ( 3, 3), 0)
         _, img = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
-    elif(filtro == 4):
-        img = cv2.medianBlur(img, ( 3, 3), 0)
+    elif(filtro == 7):
+        img = cv2.medianBlur(img, 3, 0)
         img = cv2.GaussianBlur(img, ( 5, 5), 0)
+    elif(filtro == 8):
+        img = cv2.medianBlur(img, 3, 0)
+        sobelX = cv2.Sobel(img, cv2.CV_64F, 1, 0)
+        sobelY = cv2.Sobel(img, cv2.CV_64F, 0, 1)
+        sobelX = np.uint8(np.absolute(sobelX))
+        sobelY = np.uint8(np.absolute(sobelY))
+        img = cv2.bitwise_or(sobelX, sobelY)
+    elif(filtro == 9):
+        img = cv2.GaussianBlur(img, ( 3, 3), 0)
+        img = cv2.Canny(img, 20, 120)
 
     img = np.reshape(img, (size, size, 1))
     return img
