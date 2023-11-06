@@ -63,6 +63,12 @@ def filtros(cam, size, filtro):
         img = cv2.medianBlur(img, ( 3, 3), 0)
     elif(filtro == 5):
         _, img = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
+    elif(filtro == 6):
+        img = cv2.GaussianBlur(img, ( 5, 5), 0)
+        _, img = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)
+    elif(filtro == 4):
+        img = cv2.medianBlur(img, ( 3, 3), 0)
+        img = cv2.GaussianBlur(img, ( 5, 5), 0)
 
     img = np.reshape(img, (size, size, 1))
     return img
