@@ -1,3 +1,6 @@
+#Equipe Pandora
+- Iago Magalhães
+- Vanessa Carvalho
 
 ## Introdução
 
@@ -30,6 +33,13 @@ O pré-processamento é uma das etapas fundamentais da Visão Computacional que 
 10. Filtro Gaussiano + Canny
 
 ### Métricas de avaliação
+Para avaliar os resultados obtidos pelas redes convolucionais, são utilizadas métricas estatísticas comumente utilizadas pela comunidade. Neste trabalho as métricas de acurácia e precisão foram utilizadas com fator de seleção do melhor modelo de classificação.
+
+Após plotar a matriz de confusão obtemos os valores de verdadeiros positivos e negativos e os falsos postivos e negativos. Com esses valores é possível calcular à acurácia e precisão através das seguintes equações:
+
+![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/8bbe0f13-2709-4e41-8449-8a96859654c1)
+
+
 ### Redes utilizadas
 
 ## Resultados
