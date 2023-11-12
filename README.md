@@ -59,6 +59,7 @@ Para seleção do melhor modelo foi levado em conta as métricas de acurácia e 
 Os resultados obtidos para cada rede podem ser visualizados a seguir. Vale ressaltar que entre os 10 pré-processamentos utilizados, o melhor em todos os modelos foi 'Filtro Gaussiano + Binarização'.
 
 - AlexNet
+
 Ao plotar o gráfico do histórico de treino da rede AlexNet obtemos as seguintes informações:
 
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/d77bc69b-21b6-4d19-b69a-0af213ab1fc1)
@@ -79,6 +80,7 @@ Já nos dados de validação obtemos os resultados finais da rede, com uma acur�
   - Precisão: 0.7%
   
 - EfficientNetB0
+
 Ao plotar o gráfico do histórico de treino da rede EfficientNetB0 obtemos as seguintes informações:
 
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/f02ddef0-5ef8-4dd8-9840-033de2330b00)
@@ -99,6 +101,7 @@ Já nos dados de validação obtemos os resultados finais da rede, com uma acur�
   - Precisão: 0.9333333333333332%
 
 -InceptionV3
+
 Ao plotar o gráfico do histórico de treino da rede InceptionV3 obtemos as seguintes informações:
 
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/ab821541-96dd-48ef-a3ba-f6f27ff28917)
@@ -119,6 +122,7 @@ Já nos dados de validação obtemos os resultados finais da rede, com uma acur�
   - Precisão: 0.04%
 
 - LeNet
+
 Ao plotar o gráfico do histórico de treino da rede LeNet obtemos as seguintes informações:
 
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/e2b3a6e5-6eca-4f3b-b6ce-0fb63d692220)
