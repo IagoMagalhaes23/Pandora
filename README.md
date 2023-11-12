@@ -3,7 +3,10 @@
 - Vanessa Carvalho
 
 ## Introdução
+Este trabalho visa desenvolver uma solução para correção automática de provas e simulados demúltipla escolha tem como propósito simplificar e otimizar o procedimento de avaliação
+acadêmica em contextos educacionais, com o intuito de atender às demandas de educadores, professores e instituições de ensino.
 
+Utilindo técnicas modernas de Deep Learning para leitura de cartões respostas.
 
 ## Objetivos
 ### Objetivo Geral
