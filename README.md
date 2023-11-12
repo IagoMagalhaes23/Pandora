@@ -60,15 +60,19 @@ Os resultados obtidos para cada rede podem ser visualizados a seguir. Vale ressa
 
 - AlexNet
 Ao plotar o gráfico do histórico de treino da rede AlexNet obtemos as seguintes informações:
+
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/d77bc69b-21b6-4d19-b69a-0af213ab1fc1)
 
 Ao plotar a matriz de confusão para os dados de treino, percebemos que a rede obtém um excelente desempenho.
+
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/3dcd9574-a717-48fd-9240-46a338591888)
 
 Ao plotar a matriz de confusão para os dados de teste, percebemos que a rede já mostra resultados abaixo do esperado, mostrando que sofreu com subajuste e obteve pouca generalização nas respostas.
+
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/62b95f74-d941-44fa-84c6-bb7c713feda8)
 
 Já nos dados de validação obtemos os resultados finais da rede, com uma acurácia de 65% e precisão de 70%.
+
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/815f0c2e-b3c9-48bb-b57e-cee770c62066)
 
   - Acurácia: 0.65%
@@ -76,15 +80,19 @@ Já nos dados de validação obtemos os resultados finais da rede, com uma acur�
   
 - EfficientNetB0
 Ao plotar o gráfico do histórico de treino da rede EfficientNetB0 obtemos as seguintes informações:
+
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/f02ddef0-5ef8-4dd8-9840-033de2330b00)
 
 Ao plotar a matriz de confusão para os dados de treino, percebemos que a rede obtém um excelente desempenho.
+
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/f5e9cb58-73d6-4731-bd36-3bd05708280a)
 
 Ao plotar a matriz de confusão para os dados de teste, percebemos que a rede já mostra resultados que ainda acerta bastante, próximo ao 100%.
+
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/50d173d7-8ad7-4982-a653-8931b60f3617)
 
 Já nos dados de validação obtemos os resultados finais da rede, com uma acurácia de 90% e precisão de 93%.
+
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/fc356d7a-838f-4957-b883-a4e0f930c663)
 
   - Acurácia: 0.9%
@@ -92,15 +100,19 @@ Já nos dados de validação obtemos os resultados finais da rede, com uma acur�
 
 -InceptionV3
 Ao plotar o gráfico do histórico de treino da rede InceptionV3 obtemos as seguintes informações:
+
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/ab821541-96dd-48ef-a3ba-f6f27ff28917)
 
 Ao plotar a matriz de confusão para os dados de treino, percebemos que a rede já mostra resultados bem abaixo do esperado, mostrando que sofreu com subajuste.
+
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/69fb17cc-7f0c-4f49-a93d-17984a997c7a)
 
 Já para os dados de teste, os resultados se mostram muito mais inferiores, mostrado pela matriz de confusão com pouca generalização.
+
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/9e46f4e0-3d56-4311-92e2-9ae51d03a5b3)
 
 Já nos dados de validação obtemos os resultados finais da rede, com uma acurácia de apenas 20% e precisão de 4%.
+
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/b0525a88-e412-4474-8c99-f96d5d4cf15e)
 
   - Acurácia: 0.2%
@@ -108,15 +120,19 @@ Já nos dados de validação obtemos os resultados finais da rede, com uma acur�
 
 - LeNet
 Ao plotar o gráfico do histórico de treino da rede LeNet obtemos as seguintes informações:
+
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/e2b3a6e5-6eca-4f3b-b6ce-0fb63d692220)
 
 Ao plotar a matriz de confusão para os dados de treino, percebemos que a rede obtém um excelente desempenho.
+
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/0917cd7a-30b8-4c4f-81c5-c48a4cbae889)
 
 Ainda nos dados de teste, o modelo ainda consegue acertar bastante e ter uma acurácia acima de 50%.
+
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/a1fea653-af16-4da1-a3dc-6cb3cd73fd2a)
 
 Já nos dados de validação obtemos os resultados finais da rede, com uma acurácia de 55% e precisão de 55%.
+
   ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/7048c224-1145-4abf-87ef-9a0413666972)
 
   - Acurácia: 0.55%
