@@ -39,8 +39,14 @@ Após plotar a matriz de confusão obtemos os valores de verdadeiros positivos e
 
 ![image](https://github.com/IagoMagalhaes23/Pandora/assets/65053026/8bbe0f13-2709-4e41-8449-8a96859654c1)
 
-
 ### Redes utilizadas
+Para se desenvolver o classificador, optamos por utilizar redes conhecidas pela comunidade, visando a facilidade de implementação, rapidez no desenvolvimento e utilizando seus resultados anteriores como base para o desenvolvimento de uma solução para o problema.
+
+As redes utilizadas foram:
+- AlexNet
+- EfficientNetB0
+- InceptionV3
+- LeNet
 
 ## Resultados
 
