@@ -16,7 +16,7 @@ Utilindo técnicas modernas de Deep Learning para leitura de cartões respostas.
 - Analisar desempenho de arquiteturas de CNN;
 - Desenvolver uma API para analisar imagens de provas diversas.
 
-## Materiais e Metódos
+## Materiais e Métodos
 ### Dataset
 O dataset utilizado para o treino das CNN's foi disponibilizado pela equipe organizadora do Hackathon. Para fins da utilização, tratamento e treino das redes, foi optado por realizar o download dos arquivos no formato 'Pascal VOC XML'. Ao todo são 209 imagens divididas em três conjuntos, sendo treino, teste e validação.
 
@@ -146,4 +146,4 @@ Levando em conta os valores de acurácia e precisão, o melhor modelo foi a rede
 Para fins de melhorar o uso de nosso classificador, foi desenvolvida uma API para que usuários pudessem enviar imagens e obterem respostas em forma textual.
 
 ## Conclusão
-Neste trabalho foi avaliado o uso de quatro redes convolucionais e técnicas de pré-processamento para se deselvover um classificador robusto e com alta precisão. Através dos experimentos, a rede EfficientNetB0 se mostrou com os melhores resultados de acurácia e precisão, junto com a configuração de pré-processamento 'Filtro Gaussiano + Binarização'.
+Neste trabalho foi avaliado o uso de quatro redes convolucionais e técnicas de pré-processamento para se desenvolver um classificador robusto e com alta precisão. Através dos experimentos, a rede EfficientNetB0 se mostrou com os melhores resultados de acurácia e precisão, junto com a configuração de pré-processamento 'Filtro Gaussiano + Binarização'.
