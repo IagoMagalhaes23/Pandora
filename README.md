@@ -146,4 +146,4 @@ Levando em conta os valores de acurácia e precisão, o melhor modelo foi a rede
 Para fins de melhorar o uso de nosso classificador, foi desenvolvida uma API para que usuários pudessem enviar imagens e obterem respostas em forma textual.
 
 ## Conclusão
-Neste trabalho foi avaliado o uso de quatro redes convolucionais e técnicas de pré-processamento para se desenvolver um classificador robusto e com alta precisão. Através dos experimentos, a rede EfficientNetB0 se mostrou com os melhores resultados de acurácia e precisão, junto com a configuração de pré-processamento 'Filtro Gaussiano + Binarização'.
+Neste trabalho foi avaliado o uso de quatro redes convolucionais e técnicas de pré-processamento para se desenvolver um classificador robusto e com alta precisão. Através dos experimentos, a rede EfficientNetB0 se mostrou com os melhores resultados de acurácia e precisão, junto com a configuração de pré-processamento 'Filtro de Mediana + Filtro Gaussiano'.
