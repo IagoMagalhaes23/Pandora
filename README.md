@@ -56,7 +56,7 @@ A meotodologia abordada foi baseada em trabalhos acadêmicos sobre treino de red
 Para seleção do melhor modelo foi levado em conta as métricas de acurácia e precisão.
 
 ## Resultados
-Os resultados obtidos para cada rede podem ser visualizados a seguir. Vale ressaltar que entre os 10 pré-processamentos utilizados, o melhor em todos os modelos foi 'Filtro Gaussiano + Binarização'.
+Os resultados obtidos para cada rede podem ser visualizados a seguir. Vale ressaltar que entre os 10 pré-processamentos utilizados, o melhor em todos os modelos foi 'Filtro de Mediana + Filtro Gaussiano'.
 
 - AlexNet
 
